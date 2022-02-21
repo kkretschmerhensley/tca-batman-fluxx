@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "tca-batman-fluxx",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

@@ -1,0 +1,7 @@
+{
+  "name": "tca-batman-fluxx",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
