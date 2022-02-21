@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { ModalController } from '@ionic/angular';
+import { ModalPage } from '/home.page';
 
 
 @NgModule({
