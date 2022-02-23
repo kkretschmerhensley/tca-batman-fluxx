@@ -16,17 +16,17 @@
   <div id="container">
     <h1>Batman Fluxx</h1>
 
-    <ion-modal [isOpen]="isModalOpen">
+    <!-- <ion-modal [isOpen]="isModalOpen">
       <ng-template>
         <app-modal-content>
           <ion-button (click)=letsPlay() [routerLink]="['/play']">PLAY</ion-button>
         </app-modal-content>
       </ng-template>
-    </ion-modal>
-
-    <!-- <ion-button (click)=letsPlay() [routerLink]="['/play']">PLAY</ion-button> -->
+    </ion-modal> -->
     <br>
-    <ion-button (click)=letsPlay() [routerLink]="['/stats']">STATS</ion-button>
+    <ion-button (click)=letsPlay() expand="block" size="large" [routerLink]="['/play']">PLAY</ion-button>
+    <br>
+    <ion-button (click)=letsPlay() expand="block" size="large" [routerLink]="['/stats']">STATS</ion-button>
     <!-- <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p> -->
   </div>
 </ion-content>
