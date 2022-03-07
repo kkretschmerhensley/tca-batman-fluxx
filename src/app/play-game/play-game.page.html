@@ -1,9 +1,56 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>play-game</ion-title>
+    <ion-title class="ion-text-center">Batman Fluxx</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button (click)=letsPlay() [routerLink]="['/home']">Play</ion-button>
+  <div id="container">
+    <h1>Game Results</h1>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h2># of Rules</h2>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <h2># of Goals</h2>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <h2># of Keepers</h2>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <h2># of Creepers</h2>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-list>
+      <ion-radio-group>
+        <ion-item>
+          <ion-radio value="win"></ion-radio>
+          <ion-label>Win</ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-radio value="lose"></ion-radio>
+          <ion-label>Lose</ion-label>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+    <div  class="ion-text-center">
+      <ion-button (click)=letsPlay() [routerLink]="['/stats']">End Game</ion-button>
+      <ion-button (click)=letsPlay() [routerLink]="['/home']">Quit</ion-button>
+    </div>
+  </div>
 </ion-content>
