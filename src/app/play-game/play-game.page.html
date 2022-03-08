@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="ion-text-center">Batman Fluxx</ion-title>
+    <ion-title>Batman Fluxx</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -9,25 +9,45 @@
     <h1>Game Results</h1>
 
     <ion-grid>
-      <ion-row>
+      <ion-row class="ion-align-items-center">
+        <ion-col>
+          <ion-icon name="remove-circle" size="large" (click)="rulesDecrement()"></ion-icon>
+          <span>{{ rulesNumber }}</span>
+          <ion-icon name="add-circle" size="large" (click)="rulesIncrement()"></ion-icon>
+        </ion-col>
         <ion-col>
           <h2># of Rules</h2>
         </ion-col>
       </ion-row>
 
-      <ion-row>
+      <ion-row class="ion-align-items-center">
+        <ion-col>
+          <ion-icon name="remove-circle" size="large" (click)="goalsDecrement()"></ion-icon>
+          <span>{{ goalsNumber }}</span>
+          <ion-icon name="add-circle" size="large" (click)="goalsIncrement()"></ion-icon>
+        </ion-col>
         <ion-col>
           <h2># of Goals</h2>
         </ion-col>
       </ion-row>
 
-      <ion-row>
+      <ion-row class="ion-align-items-center">
+        <ion-col>
+          <ion-icon name="remove-circle" size="large" (click)="keepersDecrement()"></ion-icon>
+          <span>{{ keepersNumber }}</span>
+          <ion-icon name="add-circle" size="large" (click)="keepersIncrement()"></ion-icon>
+        </ion-col>
         <ion-col>
           <h2># of Keepers</h2>
         </ion-col>
       </ion-row>
 
-      <ion-row>
+      <ion-row class="ion-align-items-center">
+        <ion-col>
+          <ion-icon name="remove-circle" size="large" (click)="creepersDecrement()"></ion-icon>
+          <span>{{ creepersNumber }}</span>
+          <ion-icon name="add-circle" size="large" (click)="creepersIncrement()"></ion-icon>
+        </ion-col>
         <ion-col>
           <h2># of Creepers</h2>
         </ion-col>
@@ -48,9 +68,9 @@
       </ion-radio-group>
     </ion-list>
 
-    <div  class="ion-text-center">
+    <div class="ion-text-center ion-padding-top">
       <ion-button (click)="endGame()">End Game</ion-button>
-      <ion-button (click)=letsPlay() [routerLink]="['/home']">Quit</ion-button>
+      <ion-button (click)="letsPlay()" [routerLink]="['/home']">Quit</ion-button>
     </div>
   </div>
 </ion-content>

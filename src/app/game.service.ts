@@ -20,8 +20,6 @@ const game1: GameResult = {
     , players: [{name: "Me", order: 1}, {name: "Marge", order: 2}, {name: "Bart", order: 3}, {name: "Lisa", order: 4}, {name: "Homer", order: 5}]
 };
 
-console.log(new Date().toLocaleString());
-
 const game2: GameResult = {
     start: "2022-02-14T21:00:30"
     , end: "2022-02-14T21:30:30"

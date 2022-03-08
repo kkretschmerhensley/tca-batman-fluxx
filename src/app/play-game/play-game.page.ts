@@ -9,7 +9,45 @@ import { Router } from '@angular/router';
 })
 export class PlayGamePage implements OnInit {
 
+  private rulesNumber = 0;
+  private goalsNumber = 0;
+  private keepersNumber = 0;
+  private creepersNumber = 0;
+
+
   constructor(private gameSvc: GameService, private routerSvc: Router) { }
+
+  private rulesIncrement () {
+    this.rulesNumber++;
+  }
+
+  private goalsIncrement () {
+    this.goalsNumber++;
+  }
+
+  private keepersIncrement () {
+    this.keepersNumber++;
+  }
+
+  private creepersIncrement () {
+    this.creepersNumber++;
+  }
+
+  private rulesDecrement () {
+    this.rulesNumber--;
+  }
+
+  private goalsDecrement () {
+    this.goalsNumber--;
+  }
+
+  private keepersDecrement () {
+    this.keepersNumber--;
+  }
+
+  private creepersDecrement () {
+    this.creepersNumber--;
+  }
 
   ngOnInit() {
   }
