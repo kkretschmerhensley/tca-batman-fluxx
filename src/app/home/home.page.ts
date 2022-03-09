@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonRouterOutlet } from '@ionic/angular';
+import { GameService } from '../game.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +10,18 @@ import { IonRouterOutlet } from '@ionic/angular';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private gameSvc: GameService, private routerSvc: Router) {}
 
   ngOnInit() {
   }
 
   letsPlay = () => {
-    console.log("here");
+    this.gameSvc.setCurrentGame({
+      start: new Date().toISOString()
+      , availablePlayers: []
+    });
+
+    this.routerSvc.navigateByUrl("/play")
   }
 
 }

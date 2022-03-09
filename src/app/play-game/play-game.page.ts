@@ -34,19 +34,27 @@ export class PlayGamePage implements OnInit {
   }
 
   private rulesDecrement () {
-    this.rulesNumber--;
+    if (this.rulesNumber > 0) {
+      this.rulesNumber--;
+    }
   }
 
   private goalsDecrement () {
-    this.goalsNumber--;
+    if (this.goalsNumber > 0) {
+      this.goalsNumber--;
+    }
   }
 
   private keepersDecrement () {
-    this.keepersNumber--;
+    if (this.keepersNumber > 0) {
+      this.keepersNumber--;
+    }    
   }
 
   private creepersDecrement () {
-    this.creepersNumber--;
+    if (this.creepersNumber > 0) {
+      this.creepersNumber--;
+    }
   }
 
   ngOnInit() {
@@ -57,8 +65,8 @@ export class PlayGamePage implements OnInit {
     // add new game result
     this.gameSvc.addGameResult (
       {
-        start: ""
-        , end: ""
+        start: this.gameSvc.currentGame.start
+        , end: new Date().toISOString()
         , winner: ""
         , players: []
       }

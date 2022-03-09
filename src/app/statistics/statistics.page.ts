@@ -10,7 +10,14 @@ export class StatisticsPage implements OnInit {
 
   constructor(private gameSvc: GameService) { }
 
+  shortestGame = "";
+
   ngOnInit() {
+
+  }
+
+  ionViewDidEnter() {
+    this.shortestGame = (this.gameSvc.calculateShortestGame() / 1000 / 60).toFixed(2);
   }
 
 }

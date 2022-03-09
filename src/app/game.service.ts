@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 
-// track time stamps
 interface Player {
   name: string;
   order: number;
@@ -11,6 +10,11 @@ interface GameResult {
   end: string;
   winner: string;
   players: Player[];
+}
+
+interface CurrentGame {
+  start: string;
+  availablePlayers: Player[];
 }
 
 const game1: GameResult = {
@@ -38,6 +42,25 @@ export class GameService {
   addGameResult = (r: GameResult) => {
     this.gameResults = [...this.gameResults, r]
   };
+
+  getUniquePlayers = () => (
+    [...new Set(this.gameResults.flatMap(x => x.players.map(y => y.name)))]
+  );
+
+  currentGame: CurrentGame = {
+    start: ""
+    , availablePlayers: []
+  };
+
+  setCurrentGame = (g: CurrentGame) => {
+    this.currentGame = g;
+  };
+
+  calculateShortestGame = () => (
+    Math.min(
+        ...this.gameResults.map(x => Date.parse(x.end) - Date.parse(x.start))
+    )
+);
 
   constructor() { }
 }
