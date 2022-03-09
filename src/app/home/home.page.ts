@@ -24,6 +24,10 @@ export class HomePage {
     this.routerSvc.navigateByUrl("/play")
   }
 
+  viewStats = () => {
+    this.routerSvc.navigateByUrl("stats")
+  }
+
 }
 
 export class ModalExample {

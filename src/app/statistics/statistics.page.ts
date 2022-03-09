@@ -11,6 +11,7 @@ export class StatisticsPage implements OnInit {
   constructor(private gameSvc: GameService) { }
 
   shortestGame = "";
+  longestGame = "";
 
   ngOnInit() {
 
@@ -18,6 +19,7 @@ export class StatisticsPage implements OnInit {
 
   ionViewDidEnter() {
     this.shortestGame = (this.gameSvc.calculateShortestGame() / 1000 / 60).toFixed(2);
+    this.longestGame = (this.gameSvc.calculateLongestGame() / 1000 / 60).toFixed(2);
   }
 
 }

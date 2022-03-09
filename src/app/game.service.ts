@@ -60,7 +60,13 @@ export class GameService {
     Math.min(
         ...this.gameResults.map(x => Date.parse(x.end) - Date.parse(x.start))
     )
-);
+  );
+
+  calculateLongestGame = () => (
+    Math.max(
+        ...this.gameResults.map(x => Date.parse(x.end) - Date.parse(x.start))
+    )
+  );
 
   constructor() { }
 }
