@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-interface Player {
+export interface Player {
   name: string;
   order: number;
 }

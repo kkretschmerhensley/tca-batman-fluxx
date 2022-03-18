@@ -16,16 +16,16 @@ export class HomePage {
   }
 
   letsPlay = () => {
-    this.gameSvc.setCurrentGame({
-      start: new Date().toISOString()
-      , availablePlayers: []
-    });
+    // this.gameSvc.setCurrentGame({
+    //   start: new Date().toISOString()
+    //   , availablePlayers: []
+    // });
 
-    this.routerSvc.navigateByUrl("/play")
+    this.routerSvc.navigateByUrl("/setup")
   }
 
   viewStats = () => {
-    this.routerSvc.navigateByUrl("stats")
+    this.routerSvc.navigateByUrl("/stats")
   }
 
 }
