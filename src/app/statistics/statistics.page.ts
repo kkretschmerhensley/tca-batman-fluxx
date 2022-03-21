@@ -12,6 +12,7 @@ export class StatisticsPage implements OnInit {
 
   shortestGame = "";
   longestGame = "";
+  avgTurns = "";
 
   ngOnInit() {
 
@@ -20,6 +21,7 @@ export class StatisticsPage implements OnInit {
   ionViewDidEnter() {
     this.shortestGame = (this.gameSvc.calculateShortestGame() / 1000 / 60).toFixed(2);
     this.longestGame = (this.gameSvc.calculateLongestGame() / 1000 / 60).toFixed(2);
+    this.avgTurns = this.gameSvc.calculateAvergeNumberOfRules().toFixed(2);
   }
 
 }

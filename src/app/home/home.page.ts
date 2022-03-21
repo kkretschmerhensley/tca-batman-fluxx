@@ -16,15 +16,14 @@ export class HomePage {
   }
 
   letsPlay = () => {
-    // this.gameSvc.setCurrentGame({
-    //   start: new Date().toISOString()
-    //   , availablePlayers: []
-    // });
-
-    this.routerSvc.navigateByUrl("/setup")
+    // initialize the time stamp
+    this.gameSvc.currentGame.start = new Date().toISOString();
+    // navigate to setup screen
+    this.routerSvc.navigateByUrl("/play")
   }
 
   viewStats = () => {
+    // navigate to stats screen
     this.routerSvc.navigateByUrl("/stats")
   }
 

@@ -1,42 +1,36 @@
 import { Injectable } from '@angular/core';
 
-export interface Player {
-  name: string;
-  order: number;
-}
-
 interface GameResult {
   start: string;
   end: string;
   winner: string;
-  players: Player[];
+  numberOfRules: number;
 }
 
 interface CurrentGame {
   start: string;
-  availablePlayers: Player[];
 }
 
-const game1: GameResult = {
-    start: "2022-02-14T15:14:30"
-    , end: "2022-02-14T15:20:00"
-    , winner: "Me"
-    , players: [{name: "Me", order: 1}, {name: "Marge", order: 2}, {name: "Bart", order: 3}, {name: "Lisa", order: 4}, {name: "Homer", order: 5}]
-};
-
-const game2: GameResult = {
-    start: "2022-02-14T21:00:30"
-    , end: "2022-02-14T21:30:30"
-    , winner: "Lisa"
-    , players: [{name: "Me", order: 1}, {name: "Marge", order: 2}, {name: "Bart", order: 3}, {name: "Lisa", order: 4}]
-};
+// const game1: GameResult = {
+//     start: "2022-02-14T15:14:30"
+//     , end: "2022-02-14T15:20:00"
+//     , winner: "Me"
+//     , players: [{name: "Me", order: 1}, {name: "Marge", order: 2}, {name: "Bart", order: 3}, {name: "Lisa", order: 4}, {name: "Homer", order: 5}]
+// };
+//
+// const game2: GameResult = {
+//     start: "2022-02-14T21:00:30"
+//     , end: "2022-02-14T21:30:30"
+//     , winner: "Lisa"
+//     , players: [{name: "Me", order: 1}, {name: "Marge", order: 2}, {name: "Bart", order: 3}, {name: "Lisa", order: 4}]
+// };
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameService {
 
-  gameResults = [game1, game2];
+  gameResults = [];
 
   addGameResult = (r: GameResult) => {
     this.gameResults = [...this.gameResults, r]
@@ -48,7 +42,6 @@ export class GameService {
 
   currentGame: CurrentGame = {
     start: ""
-    , availablePlayers: []
   };
 
   setCurrentGame = (g: CurrentGame) => {
@@ -66,6 +59,13 @@ export class GameService {
         ...this.gameResults.map(x => Date.parse(x.end) - Date.parse(x.start))
     )
   );
+
+  calculateAvergeNumberOfRules = () => (
+    this.gameResults.reduce(
+      (acc, x) => acc + x.numberOfRules
+      , 0
+    ) / this.gameResults.length
+  )
 
   constructor() { }
 }

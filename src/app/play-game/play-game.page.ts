@@ -67,7 +67,7 @@ export class PlayGamePage implements OnInit {
         start: this.gameSvc.currentGame.start
         , end: new Date().toISOString()
         , winner: ""
-        , players: []
+        , numberOfRules: this.rulesNumber
       }
     );
 
