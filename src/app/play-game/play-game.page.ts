@@ -68,6 +68,9 @@ export class PlayGamePage implements OnInit {
         , end: new Date().toISOString()
         , winner: ""
         , numberOfRules: this.rulesNumber
+        , numberOfGoals: this.goalsNumber
+        , numberOfKeepers: this.keepersNumber
+        , numberOfCreepers: this.creepersNumber
       }
     );
 

@@ -5,6 +5,9 @@ interface GameResult {
   end: string;
   winner: string;
   numberOfRules: number;
+  numberOfGoals: number;
+  numberOfKeepers: number;
+  numberOfCreepers: number;
 }
 
 interface CurrentGame {
@@ -36,9 +39,9 @@ export class GameService {
     this.gameResults = [...this.gameResults, r]
   };
 
-  getUniquePlayers = () => (
-    [...new Set(this.gameResults.flatMap(x => x.players.map(y => y.name)))]
-  );
+  // getUniquePlayers = () => (
+  //   [...new Set(this.gameResults.flatMap(x => x.players.map(y => y.name)))]
+  // );
 
   currentGame: CurrentGame = {
     start: ""
@@ -65,7 +68,28 @@ export class GameService {
       (acc, x) => acc + x.numberOfRules
       , 0
     ) / this.gameResults.length
-  )
+  );
+
+  calculateAvergeNumberOfGoals = () => (
+    this.gameResults.reduce(
+      (acc, x) => acc + x.numberOfGoals
+      , 0
+    ) / this.gameResults.length
+  );
+
+  calculateAvergeNumberOfKeepers = () => (
+    this.gameResults.reduce(
+      (acc, x) => acc + x.numberOfKeepers
+      , 0
+    ) / this.gameResults.length
+  );
+
+  calculateAvergeNumberOfCreepers = () => (
+    this.gameResults.reduce(
+      (acc, x) => acc + x.numberOfCreepers
+      , 0
+    ) / this.gameResults.length
+  );
 
   constructor() { }
 }

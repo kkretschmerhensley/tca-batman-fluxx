@@ -13,6 +13,9 @@ export class StatisticsPage implements OnInit {
   shortestGame = "";
   longestGame = "";
   avgTurns = "";
+  avgGoals = "";
+  avgKeepers = "";
+  avgCreepers = "";
 
   ngOnInit() {
 
@@ -22,6 +25,9 @@ export class StatisticsPage implements OnInit {
     this.shortestGame = (this.gameSvc.calculateShortestGame() / 1000 / 60).toFixed(2);
     this.longestGame = (this.gameSvc.calculateLongestGame() / 1000 / 60).toFixed(2);
     this.avgTurns = this.gameSvc.calculateAvergeNumberOfRules().toFixed(2);
+    this.avgGoals = this.gameSvc.calculateAvergeNumberOfGoals().toFixed(2);
+    this.avgKeepers = this.gameSvc.calculateAvergeNumberOfKeepers().toFixed(2);
+    this.avgCreepers = this.gameSvc.calculateAvergeNumberOfCreepers().toFixed(2);
   }
 
 }
