@@ -25,6 +25,26 @@ export class SetupGamePage implements OnInit {
   }
 
   playGame = () => {
+    // set up current game players and start timestamp
+    this.gameSvc.setCurrentGame({
+      start: new Date().toISOString()
+      , availablePlayers: [
+        {
+          name: this.availablePlayers[0].name
+          , order: 1
+        }
+        , {
+          name: this.availablePlayers[1].name
+          , order: 2
+        }
+        , {
+          name: "Suzzie"
+          , order: 3
+        }
+      ]
+    });
+
+    // navigate to the play screen
     this.routerSvc.navigateByUrl("/play")
   }
 

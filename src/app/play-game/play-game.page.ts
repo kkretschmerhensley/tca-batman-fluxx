@@ -48,7 +48,7 @@ export class PlayGamePage implements OnInit {
   private keepersDecrement () {
     if (this.keepersNumber > 0) {
       this.keepersNumber--;
-    }    
+    }
   }
 
   private creepersDecrement () {
@@ -61,7 +61,6 @@ export class PlayGamePage implements OnInit {
   }
 
   endGame = () => {
-
     // add new game result
     this.gameSvc.addGameResult (
       {
@@ -72,8 +71,13 @@ export class PlayGamePage implements OnInit {
       }
     );
 
-    // navigate to home page
+    // navigate to stats page
     this.routerSvc.navigateByUrl("/stats")
+  }
+
+  quitGame = () => {
+    // naviate to home screen
+    this.routerSvc.navigateByUrl("/home")
   }
 
 }
