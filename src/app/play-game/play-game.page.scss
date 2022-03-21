@@ -16,6 +16,15 @@ ion-row {
   margin-left: 2em;
 }
 
+ion-col {
+  display: inline-flex;
+  align-items: center;
+}
+
+h2 {
+  margin-top: 10px;
+}
+
 span {
   font-size: 24px;
   padding-left: 1.1em;
