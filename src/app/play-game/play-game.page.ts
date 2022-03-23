@@ -14,7 +14,6 @@ export class PlayGamePage implements OnInit {
   private keepersNumber = 0;
   private creepersNumber = 0;
 
-
   constructor(private gameSvc: GameService, private routerSvc: Router) { }
 
   private rulesIncrement () {
