@@ -28,8 +28,42 @@
 /* added fonts */
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800&family=Kalam:wght@300;400;700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
 
-.button-native {
-  background: #00295c !important;
+/* adding a colors */
+// https://ionicframework.com/docs/theming/colors#new-color-creator
+:root {
+	--ion-color-new: #1152a2;
+	--ion-color-new-rgb: 17,82,162;
+	--ion-color-new-contrast: #ffffff;
+	--ion-color-new-contrast-rgb: 255,255,255;
+	--ion-color-new-shade: #0f488f;
+	--ion-color-new-tint: #2963ab;
+}
+
+.ion-color-new {
+	--ion-color-base: var(--ion-color-new);
+	--ion-color-base-rgb: var(--ion-color-new-rgb);
+	--ion-color-contrast: var(--ion-color-new-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-new-contrast-rgb);
+	--ion-color-shade: var(--ion-color-new-shade);
+	--ion-color-tint: var(--ion-color-new-tint);
+}
+
+:root {
+	--ion-color-favorite: #bca429;
+	--ion-color-favorite-rgb: 188,164,41;
+	--ion-color-favorite-contrast: #000000;
+	--ion-color-favorite-contrast-rgb: 0,0,0;
+	--ion-color-favorite-shade: #a59024;
+	--ion-color-favorite-tint: #c3ad3e;
+}
+
+.ion-color-favorite {
+	--ion-color-base: var(--ion-color-favorite);
+	--ion-color-base-rgb: var(--ion-color-favorite-rgb);
+	--ion-color-contrast: var(--ion-color-favorite-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-favorite-contrast-rgb);
+	--ion-color-shade: var(--ion-color-favorite-shade);
+	--ion-color-tint: var(--ion-color-favorite-tint);
 }
 
 .fluxx-title {
