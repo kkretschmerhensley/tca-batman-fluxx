@@ -26,7 +26,20 @@
   text-decoration: none;
 }
 
+#fluxx {
+  font-size: 1.1em;
+  font-family: 'Kalam', cursive;
+  background: -webkit-linear-gradient(#bc8d29, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px black;
+}
+
 ion-button {
   width: 250px;
   margin-bottom: 1.5em;
+}
+
+h1 {
+  font-size: 5em;
 }
