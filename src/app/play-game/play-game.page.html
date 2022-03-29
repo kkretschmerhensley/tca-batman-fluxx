@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Batman Fluxx</ion-title>
+    <ion-title>Batman <span class="fluxx-title">Fluxx</span></ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,7 +12,7 @@
       <ion-row class="ion-align-items-center">
         <ion-col>
           <ion-icon name="remove-circle" size="large" (click)="rulesDecrement()"></ion-icon>
-          <span>{{ rulesNumber }}</span>
+          <span class="number">{{ rulesNumber }}</span>
           <ion-icon name="add-circle" size="large" (click)="rulesIncrement()"></ion-icon>
         </ion-col>
         <ion-col>
@@ -23,7 +23,7 @@
       <ion-row class="ion-align-items-center">
         <ion-col>
           <ion-icon name="remove-circle" size="large" (click)="goalsDecrement()"></ion-icon>
-          <span>{{ goalsNumber }}</span>
+          <span class="number">{{ goalsNumber }}</span>
           <ion-icon name="add-circle" size="large" (click)="goalsIncrement()"></ion-icon>
         </ion-col>
         <ion-col>
@@ -34,7 +34,7 @@
       <ion-row class="ion-align-items-center">
         <ion-col>
           <ion-icon name="remove-circle" size="large" (click)="keepersDecrement()"></ion-icon>
-          <span>{{ keepersNumber }}</span>
+          <span class="number">{{ keepersNumber }}</span>
           <ion-icon name="add-circle" size="large" (click)="keepersIncrement()"></ion-icon>
         </ion-col>
         <ion-col>
@@ -45,7 +45,7 @@
       <ion-row class="ion-align-items-center">
         <ion-col>
           <ion-icon name="remove-circle" size="large" (click)="creepersDecrement()"></ion-icon>
-          <span>{{ creepersNumber }}</span>
+          <span class="number">{{ creepersNumber }}</span>
           <ion-icon name="add-circle" size="large" (click)="creepersIncrement()"></ion-icon>
         </ion-col>
         <ion-col>
@@ -57,12 +57,12 @@
     <ion-list>
       <ion-radio-group value="win">
         <ion-item>
-          <ion-label>Win</ion-label>
+          <ion-label><span class="label">Win</span></ion-label>
           <ion-radio value="win" slot="start"></ion-radio>
         </ion-item>
 
         <ion-item>
-          <ion-label>Lose</ion-label>
+          <ion-label><span class="label">Lose</span></ion-label>
           <ion-radio value="lose" slot="start"></ion-radio>
         </ion-item>
       </ion-radio-group>

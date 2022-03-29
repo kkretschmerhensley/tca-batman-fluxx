@@ -25,7 +25,12 @@ ion-row {
   margin-left: 2em;
 }
 
-span {
+.label {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2em;
+}
+
+.number {
   font-size: 24px;
   padding-left: 1.1em;
   padding-right: 1.1em;
