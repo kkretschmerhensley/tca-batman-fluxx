@@ -3,7 +3,7 @@
     <ion-title>Batman <span class="fluxx-title">Fluxx</span></ion-title>
 
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="home" [routerLink]="['/home']"></ion-back-button>
+      <ion-back-button defaultHref="home" (click)="homeButton()"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -13,7 +13,7 @@
     <h1>Statistics</h1>
   </div>
 
-  <!-- <h4>Total Games Played: {{ gameSvc.gameResults.length }}</h4> -->
+  <!-- <h4>Total Games Played: {{ gameSvc.gameResults.length }}</h4> [routerLink]="['/home']"-->
 
   <ion-grid>
     <ion-row class="ion-align-items-center ion-justify-content-center">
@@ -146,8 +146,4 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-
-  <div class="ion-text-center ion-padding-bottom">
-    <ion-button (click)=playAgain() size="large" color="favorite">Play Again</ion-button>
-  </div>
 </ion-content>

@@ -28,6 +28,10 @@ export class StatisticsPage implements OnInit {
     this.routerSvc.navigateByUrl("/play")
   }
 
+  homeButton = () => {
+    this.routerSvc.navigateByUrl("/home")
+  }
+
   ionViewDidEnter() {
     this.shortestGame = (this.gameSvc.calculateShortestGame() / 1000 / 60).toFixed(2);
     this.longestGame = (this.gameSvc.calculateLongestGame() / 1000 / 60).toFixed(2);
