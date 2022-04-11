@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
 
 interface GameResult {
   start: string;
@@ -21,8 +22,10 @@ export class GameService {
 
   gameResults = [];
 
-  addGameResult = (r: GameResult) => {
+  addGameResult = async (r: GameResult) => {
     this.gameResults = [...this.gameResults, r]
+
+    await this.storage.set("gameResults", this.gameResults);
   };
 
   currentGame: CurrentGame = {
@@ -80,5 +83,14 @@ export class GameService {
     ) / this.gameResults.length
   );
 
-  constructor() { }
+  constructor(private storageSvc: Storage) {
+    this.init();
+  }
+
+  private storage: Storage = undefined;
+
+  init = async () => {
+    this.storage = await this.storageSvc.create();
+    this.gameResults = await this.storage.get("gameResults") ?? [];
+  };
 }
