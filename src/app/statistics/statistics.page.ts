@@ -17,6 +17,7 @@ export class StatisticsPage implements OnInit {
   avgGoals = "";
   avgKeepers = "";
   avgCreepers = "";
+  gamesWon = "";
 
   ngOnInit() {
   }
@@ -39,6 +40,7 @@ export class StatisticsPage implements OnInit {
     this.avgGoals = this.gameSvc.calculateAvergeNumberOfGoals().toFixed(2);
     this.avgKeepers = this.gameSvc.calculateAvergeNumberOfKeepers().toFixed(2);
     this.avgCreepers = this.gameSvc.calculateAvergeNumberOfCreepers().toFixed(2);
+    this.gamesWon = this.gameSvc.calculateGamesWon().toFixed(1);
   }
 
 }

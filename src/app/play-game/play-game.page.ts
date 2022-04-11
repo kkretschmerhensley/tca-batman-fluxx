@@ -13,6 +13,7 @@ export class PlayGamePage implements OnInit {
   private goalsNumber = 0;
   private keepersNumber = 0;
   private creepersNumber = 0;
+  private winningNumber = 0;
 
   constructor(private gameSvc: GameService, private routerSvc: Router) { }
 
@@ -65,7 +66,7 @@ export class PlayGamePage implements OnInit {
       {
         start: this.gameSvc.currentGame.start
         , end: new Date().toISOString()
-        , winner: ""
+        , gamesWon: this.winningNumber++
         , numberOfRules: this.rulesNumber
         , numberOfGoals: this.goalsNumber
         , numberOfKeepers: this.keepersNumber

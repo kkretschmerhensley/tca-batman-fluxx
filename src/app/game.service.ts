@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 interface GameResult {
   start: string;
   end: string;
-  winner: string;
+  gamesWon: number;
   numberOfRules: number;
   numberOfGoals: number;
   numberOfKeepers: number;
@@ -32,6 +32,13 @@ export class GameService {
   setCurrentGame = (g: CurrentGame) => {
     this.currentGame = g;
   };
+
+  calculateGamesWon = () => (
+    this.gameResults.reduce(
+      (acc, x) => acc + x.gamesWon
+      , 0
+    ) / this.gameResults.length
+  );
 
   calculateShortestGame = () => (
     Math.min(
