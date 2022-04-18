@@ -67,6 +67,7 @@ export class PlayGamePage implements OnInit {
         start: this.gameSvc.currentGame.start
         , end: new Date().toISOString()
         , gamesWon: this.winOrLose === "win"
+        , gamesLost: this.winOrLose === "lose"
         , numberOfRules: this.rulesNumber
         , numberOfGoals: this.goalsNumber
         , numberOfKeepers: this.keepersNumber

@@ -5,6 +5,7 @@ interface GameResult {
   start: string;
   end: string;
   gamesWon: boolean;
+  gamesLost: boolean;
   numberOfRules: number;
   numberOfGoals: number;
   numberOfKeepers: number;
@@ -39,6 +40,10 @@ export class GameService {
 
   calculateGamesWon = () => (
     this.gameResults.filter(x => x.gamesWon).length
+  );
+
+  calculateGamesLost = () => (
+    this.gameResults.filter(x => x.gamesLost).length
   );
 
   calculateShortestGame = () => (
