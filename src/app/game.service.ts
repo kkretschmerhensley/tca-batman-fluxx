@@ -24,7 +24,6 @@ export class GameService {
   gameResults = [];
 
   addGameResult = async (r: GameResult) => {
-    console.log(r)
     this.gameResults = [...this.gameResults, r]
 
     await this.storage.set("gameResults", this.gameResults);

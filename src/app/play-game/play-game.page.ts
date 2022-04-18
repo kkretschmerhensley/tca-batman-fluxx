@@ -13,7 +13,7 @@ export class PlayGamePage implements OnInit {
   private goalsNumber = 0;
   private keepersNumber = 0;
   private creepersNumber = 0;
-  public winOrLose = "win"
+  public winOrLose = "win";
 
   constructor(private gameSvc: GameService, private routerSvc: Router) { }
 

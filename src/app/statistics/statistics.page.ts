@@ -23,12 +23,12 @@ export class StatisticsPage implements OnInit {
   ngOnInit() {
   }
 
-  playAgain = () => {
-    // initialize the time stamp
-    this.gameSvc.currentGame.start = new Date().toISOString();
-    // navigate to setup screen
-    this.routerSvc.navigateByUrl("/play")
-  }
+  // playAgain = () => {
+  //   // initialize the time stamp
+  //   this.gameSvc.currentGame.start = new Date().toISOString();
+  //   // navigate to setup screen
+  //   this.routerSvc.navigateByUrl("/play")
+  // }
 
   homeButton = () => {
     this.routerSvc.navigateByUrl("/home")
@@ -43,8 +43,6 @@ export class StatisticsPage implements OnInit {
     this.avgCreepers = this.gameSvc.calculateAvergeNumberOfCreepers().toFixed(2);
     this.gamesWon = this.gameSvc.calculateGamesWon().toFixed(0);
     this.gamesLost = this.gameSvc.calculateGamesLost().toFixed(0);
-    console.log(this.gamesWon);
-    console.log(this.gamesLost);
   }
 
 }
