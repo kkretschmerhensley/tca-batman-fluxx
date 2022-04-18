@@ -57,7 +57,7 @@
     <p class="totalPerGame">Total # per game</p>
 
     <ion-list>
-      <ion-radio-group value="win">
+      <ion-radio-group [(ngModel)]="winOrLose">
         <ion-item>
           <ion-label><span class="label">Win</span></ion-label>
           <ion-radio value="win" slot="start"></ion-radio>

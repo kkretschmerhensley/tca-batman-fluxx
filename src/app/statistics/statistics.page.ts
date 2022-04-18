@@ -40,7 +40,8 @@ export class StatisticsPage implements OnInit {
     this.avgGoals = this.gameSvc.calculateAvergeNumberOfGoals().toFixed(2);
     this.avgKeepers = this.gameSvc.calculateAvergeNumberOfKeepers().toFixed(2);
     this.avgCreepers = this.gameSvc.calculateAvergeNumberOfCreepers().toFixed(2);
-    this.gamesWon = this.gameSvc.calculateGamesWon().toFixed(1);
+    this.gamesWon = this.gameSvc.calculateGamesWon().toFixed(0);
+    console.log(this.gamesWon);
   }
 
 }

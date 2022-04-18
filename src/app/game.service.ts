@@ -4,7 +4,7 @@ import { Storage } from '@ionic/storage-angular';
 interface GameResult {
   start: string;
   end: string;
-  gamesWon: number;
+  gamesWon: boolean;
   numberOfRules: number;
   numberOfGoals: number;
   numberOfKeepers: number;
@@ -23,6 +23,7 @@ export class GameService {
   gameResults = [];
 
   addGameResult = async (r: GameResult) => {
+    console.log(r)
     this.gameResults = [...this.gameResults, r]
 
     await this.storage.set("gameResults", this.gameResults);
@@ -37,9 +38,7 @@ export class GameService {
   };
 
   calculateGamesWon = () => (
-    this.gameResults.reduce(
-      (acc, x) => acc + x.gamesWon, 0
-    )
+    this.gameResults.filter(x => x.gamesWon).length
   );
 
   calculateShortestGame = () => (
