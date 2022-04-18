@@ -14,7 +14,7 @@ ion-col {
 
 ion-grid {
   padding-top: 1.5em;
-  padding-bottom: 2em;
+  padding-bottom: .5em;
 }
 
 ion-label {
@@ -34,4 +34,9 @@ ion-row {
   font-size: 24px;
   padding-left: 1.1em;
   padding-right: 1.1em;
+}
+
+.totalPerGame {
+  text-align: center;
+  padding-bottom: 1.5em;
 }

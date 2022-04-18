@@ -11,9 +11,9 @@
     <ion-grid>
       <ion-row class="ion-align-items-center">
         <ion-col>
-          <ion-icon name="remove-circle" size="large" (click)="rulesDecrement()"></ion-icon>
+          <ion-icon name="remove-circle" size="large" color="favorite" (click)="rulesDecrement()"></ion-icon>
           <span class="number">{{ rulesNumber }}</span>
-          <ion-icon name="add-circle" size="large" (click)="rulesIncrement()"></ion-icon>
+          <ion-icon name="add-circle" size="large" color="favorite" (click)="rulesIncrement()"></ion-icon>
         </ion-col>
         <ion-col>
           <h2># of Rules</h2>
@@ -22,9 +22,9 @@
 
       <ion-row class="ion-align-items-center">
         <ion-col>
-          <ion-icon name="remove-circle" size="large" (click)="goalsDecrement()"></ion-icon>
+          <ion-icon name="remove-circle" size="large" color="favorite" (click)="goalsDecrement()"></ion-icon>
           <span class="number">{{ goalsNumber }}</span>
-          <ion-icon name="add-circle" size="large" (click)="goalsIncrement()"></ion-icon>
+          <ion-icon name="add-circle" size="large" color="favorite" (click)="goalsIncrement()"></ion-icon>
         </ion-col>
         <ion-col>
           <h2># of Goals</h2>
@@ -33,9 +33,9 @@
 
       <ion-row class="ion-align-items-center">
         <ion-col>
-          <ion-icon name="remove-circle" size="large" (click)="keepersDecrement()"></ion-icon>
+          <ion-icon name="remove-circle" size="large" color="favorite" (click)="keepersDecrement()"></ion-icon>
           <span class="number">{{ keepersNumber }}</span>
-          <ion-icon name="add-circle" size="large" (click)="keepersIncrement()"></ion-icon>
+          <ion-icon name="add-circle" size="large" color="favorite" (click)="keepersIncrement()"></ion-icon>
         </ion-col>
         <ion-col>
           <h2># of Keepers</h2>
@@ -44,15 +44,17 @@
 
       <ion-row class="ion-align-items-center">
         <ion-col>
-          <ion-icon name="remove-circle" size="large" (click)="creepersDecrement()"></ion-icon>
+          <ion-icon name="remove-circle" size="large" color="favorite" (click)="creepersDecrement()"></ion-icon>
           <span class="number">{{ creepersNumber }}</span>
-          <ion-icon name="add-circle" size="large" (click)="creepersIncrement()"></ion-icon>
+          <ion-icon name="add-circle" size="large" color="favorite" (click)="creepersIncrement()"></ion-icon>
         </ion-col>
         <ion-col>
           <h2># of Creepers</h2>
         </ion-col>
       </ion-row>
     </ion-grid>
+
+    <p class="totalPerGame">Total # per game</p>
 
     <ion-list>
       <ion-radio-group value="win">

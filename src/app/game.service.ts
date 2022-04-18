@@ -38,9 +38,8 @@ export class GameService {
 
   calculateGamesWon = () => (
     this.gameResults.reduce(
-      (acc, x) => acc + x.gamesWon
-      , 0
-    ) / this.gameResults.length
+      (acc, x) => acc + x.gamesWon, 0
+    )
   );
 
   calculateShortestGame = () => (
