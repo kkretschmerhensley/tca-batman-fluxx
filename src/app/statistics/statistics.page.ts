@@ -23,12 +23,12 @@ export class StatisticsPage implements OnInit {
   ngOnInit() {
   }
 
-  // playAgain = () => {
-  //   // initialize the time stamp
-  //   this.gameSvc.currentGame.start = new Date().toISOString();
-  //   // navigate to setup screen
-  //   this.routerSvc.navigateByUrl("/play")
-  // }
+  playAgain = () => {
+    // initialize the time stamp
+    this.gameSvc.currentGame.start = new Date().toISOString();
+    // navigate to setup screen
+    this.routerSvc.navigateByUrl("/play")
+  }
 
   homeButton = () => {
     this.routerSvc.navigateByUrl("/home")
