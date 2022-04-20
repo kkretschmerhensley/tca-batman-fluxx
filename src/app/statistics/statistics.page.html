@@ -72,7 +72,7 @@
       <ion-col>
         <ion-card color="new">
           <ion-card-content>
-            {{ shortestGame }}
+            {{ shortestGame }} <small>min</small>
           </ion-card-content>
 
           <ion-card-header>
@@ -84,7 +84,7 @@
       <ion-col>
         <ion-card color="new">
           <ion-card-content>
-            {{ longestGame }}
+            {{ longestGame }} <small>min</small>
           </ion-card-content>
 
           <ion-card-header>
@@ -148,6 +148,6 @@
   </ion-grid>
 
   <div class="ion-text-center ion-padding-top">
-    <ion-button (click)="playAgain()" color="favorite">Play Game</ion-button>
+    <ion-button (click)="playAgain()" color="favorite">New Game</ion-button>
   </div>
 </ion-content>

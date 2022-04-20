@@ -26,7 +26,7 @@ export class StatisticsPage implements OnInit {
   playAgain = () => {
     // initialize the time stamp
     this.gameSvc.currentGame.start = new Date().toISOString();
-    // navigate to setup screen
+    // navigate to play screen
     this.routerSvc.navigateByUrl("/play")
   }
 
