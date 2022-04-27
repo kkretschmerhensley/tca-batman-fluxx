@@ -13,12 +13,34 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
+  <div id="container"
+    *ngIf="gameSvc.emailAddress.length > 0"
+  >
     <h1>Batman<br><span id="fluxx">Fluxx</span></h1>
 
     <br>
-    <ion-button (click)=letsPlay() size="large" color="new">PLAY</ion-button>
+    <ion-button (click)="letsPlay()" size="large" color="new">
+      PLAY
+    </ion-button>
     <br>
-    <ion-button (click)=viewStats() size="large" color="new">STATS</ion-button>
+    <ion-button (click)="viewStats()" size="large" color="new">
+      STATS
+    </ion-button>
+
+    <h5>{{ gameSvc.emailAddress }}</h5>
+    <ion-button (click)="gameSvc.emailAddress = ''; emailForEditing=''" color="new">
+      Reset
+    </ion-button>
+  </div>
+
+  <div
+  *ngIf="gameSvc.emailAddress.length === 0"
+  >
+    <ion-input
+      placeholder="Enter your email address"
+      [(ngModel)]="emailForEditing"
+    ></ion-input>
+
+    <ion-button (click)="saveEmail()" color="new">Save</ion-button>
   </div>
 </ion-content>

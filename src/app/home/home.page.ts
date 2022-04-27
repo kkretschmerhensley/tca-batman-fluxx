@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { IonRouterOutlet } from '@ionic/angular';
 import { GameService } from '../game.service';
 import { Router } from '@angular/router';
 
@@ -27,8 +26,9 @@ export class HomePage {
     this.routerSvc.navigateByUrl("/stats")
   }
 
-}
+  emailForEditing = "";
 
-export class ModalExample {
-  constructor(public routerOutlet: IonRouterOutlet) {}
+  saveEmail = () => {
+    this.gameSvc.updateEmail(this.emailForEditing);
+  };
 }

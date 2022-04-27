@@ -29,7 +29,7 @@ export class GameService {
 
     // await this.storage.set("gameResults", this.gameResults);
     await saveGameToCloud(
-      "kakretschmerhensley@madisoncollege.edu"
+      this.emailAddress
       , "tca-batman-fluxx"
       , r.end
       , r
@@ -101,6 +101,17 @@ export class GameService {
   init = async () => {
     this.storage = await this.storageSvc.create();
     // this.gameResults = await this.storage.get("gameResults") ?? [];
-    this.gameResults = await loadGamesFromCloud("kakretschmerhensley@madisoncollege.edu", "tca-batman-fluxx") ?? [];
+    this.emailAddress = await this.storage.get("email") ?? "";
+
+    if (this.emailAddress.length > 0) {
+      this.gameResults = await loadGamesFromCloud(this.emailAddress, "tca-batman-fluxx") ?? [];
+    }
+  };
+
+  emailAddress = "";
+
+  updateEmail = async (newEmailAddress) => {
+    this.emailAddress = await this.storage.set('email', newEmailAddress);
+    this.init();
   };
 }
