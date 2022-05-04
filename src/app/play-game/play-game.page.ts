@@ -9,49 +9,49 @@ import { Router } from '@angular/router';
 })
 export class PlayGamePage implements OnInit {
 
-  private rulesNumber = 0;
-  private goalsNumber = 0;
-  private keepersNumber = 0;
-  private creepersNumber = 0;
-  public winOrLose = "win";
+  rulesNumber = 0;
+  goalsNumber = 0;
+  keepersNumber = 0;
+  creepersNumber = 0;
+  winOrLose = "win";
 
   constructor(private gameSvc: GameService, private routerSvc: Router) { }
 
-  private rulesIncrement () {
+  rulesIncrement () {
     this.rulesNumber++;
   }
 
-  private goalsIncrement () {
+  goalsIncrement () {
     this.goalsNumber++;
   }
 
-  private keepersIncrement () {
+  keepersIncrement () {
     this.keepersNumber++;
   }
 
-  private creepersIncrement () {
+  creepersIncrement () {
     this.creepersNumber++;
   }
 
-  private rulesDecrement () {
+  rulesDecrement () {
     if (this.rulesNumber > 0) {
       this.rulesNumber--;
     }
   }
 
-  private goalsDecrement () {
+  goalsDecrement () {
     if (this.goalsNumber > 0) {
       this.goalsNumber--;
     }
   }
 
-  private keepersDecrement () {
+  keepersDecrement () {
     if (this.keepersNumber > 0) {
       this.keepersNumber--;
     }
   }
 
-  private creepersDecrement () {
+  creepersDecrement () {
     if (this.creepersNumber > 0) {
       this.creepersNumber--;
     }

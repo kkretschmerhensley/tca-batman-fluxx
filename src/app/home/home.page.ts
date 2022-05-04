@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  constructor(private gameSvc: GameService, private routerSvc: Router) {}
+  constructor(public gameSvc: GameService, private routerSvc: Router) {}
 
   ngOnInit() {
   }
